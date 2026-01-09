@@ -15,9 +15,9 @@ const AboutSection = () => {
             Our Story
           </p>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-8 leading-tight">
-            Because 2nd Class
+            Because 2nd Class is
             <br />
-            is <span className="text-gradient-gold">Too Expensive</span>
+            <span className="text-gradient-gold">Too Expensive</span>
           </h2>
           
           <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
