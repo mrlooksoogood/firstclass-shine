@@ -14,11 +14,11 @@ const Footer = () => {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <div className="flex items-center justify-center gap-3 mb-4">
+          <div className="flex flex-col items-center mb-4">
             <img 
               src={fcmLogo} 
               alt="FIRSTCLASS MEDIA" 
-              className="h-14 w-auto invert"
+              className="h-16 w-auto invert mb-3"
             />
             <span className="font-display text-lg font-bold text-secondary-foreground">
               FIRSTCLASS <span className="text-primary">MEDIA</span>
