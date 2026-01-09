@@ -14,7 +14,7 @@ const Header = () => {
           <img 
             src={fcmLogo} 
             alt="FIRSTCLASS MEDIA" 
-            className="h-12 w-auto invert"
+            className="h-16 w-auto invert"
           />
           <h1 className="font-display text-xl font-bold text-secondary-foreground tracking-wide">
             FIRSTCLASS <span className="text-primary">MEDIA</span>
