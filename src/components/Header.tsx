@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import fcmLogo from "@/assets/fcm-logo.png";
+import fcmLogoMark from "@/assets/fcm-logo-mark.png";
 
 const Header = () => {
   return (
@@ -9,13 +9,15 @@ const Header = () => {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="fixed top-0 left-0 right-0 z-50 bg-secondary/95 backdrop-blur-sm border-b border-primary/20"
     >
-      <div className="container mx-auto px-6 py-2 flex items-center justify-between">
+      <div className="container mx-auto px-6 py-1 flex items-center justify-between">
         <a href="/" className="flex items-center gap-3">
-          <img 
-            src={fcmLogo} 
-            alt="FIRSTCLASS MEDIA" 
-            className="h-16 w-auto invert"
-          />
+          <div className="h-16 w-16 rounded-full overflow-hidden shadow-gold border border-primary/30 bg-secondary">
+            <img
+              src={fcmLogoMark}
+              alt="FIRSTCLASS MEDIA logo"
+              className="h-full w-full object-contain"
+            />
+          </div>
           <h1 className="font-display text-xl font-bold text-secondary-foreground tracking-wide">
             FIRSTCLASS <span className="text-primary">MEDIA</span>
           </h1>
