@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import fcmLogo from "@/assets/fcm-logo.png";
+import fcmLogoMark from "@/assets/fcm-logo-mark.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
+
   return (
     <footer className="py-8 bg-charcoal border-t border-primary/20">
       <div className="container mx-auto px-6">
@@ -15,10 +15,11 @@ const Footer = () => {
           className="text-center"
         >
           <div className="flex flex-col items-center mb-4">
-            <img 
-              src={fcmLogo} 
-              alt="FIRSTCLASS MEDIA" 
-              className="h-16 w-auto invert mb-3"
+            <img
+              src={fcmLogoMark}
+              alt="FIRSTCLASS MEDIA"
+              className="h-24 w-auto mb-3"
+              loading="lazy"
             />
             <span className="font-display text-lg font-bold text-secondary-foreground">
               FIRSTCLASS <span className="text-primary">MEDIA</span>
