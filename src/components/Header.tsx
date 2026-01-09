@@ -15,7 +15,7 @@ const Header = () => {
           </div>
           <div>
             <h1 className="font-display text-xl font-bold text-secondary-foreground tracking-wide">
-              FIRST CLASS MEDIA
+              FIRSTCLASS <span className="text-primary">MEDIA</span>
             </h1>
           </div>
         </div>

@@ -14,9 +14,10 @@ const AboutSection = () => {
           <p className="text-primary font-semibold tracking-widest uppercase text-sm mb-4">
             Our Story
           </p>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-8">
-            Because 2nd Class is{" "}
-            <span className="text-gradient-gold">Too Expensive</span>
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-8 leading-tight">
+            Because 2nd Class
+            <br />
+            is <span className="text-gradient-gold">Too Expensive</span>
           </h2>
           
           <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
