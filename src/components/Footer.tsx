@@ -18,7 +18,7 @@ const Footer = () => {
               <span className="font-display font-bold text-primary-foreground text-sm">F</span>
             </div>
             <span className="font-display text-lg font-bold text-secondary-foreground">
-              FIRST CLASS MEDIA
+              FIRSTCLASS <span className="text-primary">MEDIA</span>
             </span>
           </div>
           
