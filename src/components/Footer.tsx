@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import fcmLogo from "@/assets/fcm-logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -13,17 +14,16 @@ const Footer = () => {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <div className="w-8 h-8 rounded-full bg-gradient-gold flex items-center justify-center">
-              <span className="font-display font-bold text-primary-foreground text-sm">F</span>
-            </div>
-            <span className="font-display text-lg font-bold text-secondary-foreground">
-              FIRSTCLASS <span className="text-primary">MEDIA</span>
-            </span>
+          <div className="flex items-center justify-center mb-4">
+            <img 
+              src={fcmLogo} 
+              alt="FIRSTCLASS MEDIA" 
+              className="h-12 w-auto invert"
+            />
           </div>
           
           <p className="text-secondary-foreground/60 text-sm mb-2">
-            © {currentYear} First Class Media. All rights reserved.
+            © {currentYear} FIRSTCLASS MEDIA. All rights reserved.
           </p>
           <p className="text-primary/80 text-sm font-medium">
             Publishing authentic culture and knowledge.

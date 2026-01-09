@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import fcmLogo from "@/assets/fcm-logo.png";
 
 const Header = () => {
   return (
@@ -9,16 +10,13 @@ const Header = () => {
       className="fixed top-0 left-0 right-0 z-50 bg-secondary/95 backdrop-blur-sm border-b border-primary/20"
     >
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-gradient-gold flex items-center justify-center shadow-gold">
-            <span className="font-display font-bold text-primary-foreground text-lg">F</span>
-          </div>
-          <div>
-            <h1 className="font-display text-xl font-bold text-secondary-foreground tracking-wide">
-              FIRSTCLASS <span className="text-primary">MEDIA</span>
-            </h1>
-          </div>
-        </div>
+        <a href="/" className="flex items-center gap-3">
+          <img 
+            src={fcmLogo} 
+            alt="FIRSTCLASS MEDIA" 
+            className="h-10 w-auto invert"
+          />
+        </a>
         
         <nav className="hidden md:flex items-center gap-8">
           <a href="#books" className="text-secondary-foreground/80 hover:text-primary transition-colors font-medium">
