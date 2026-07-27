@@ -5,6 +5,9 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  // "/" for local dev and custom-domain (root) hosting; GitHub Pages project
+  // site sets PAGES_BASE="/firstclass-shine/" so assets resolve on the subpath.
+  base: process.env.PAGES_BASE || "/",
   server: {
     host: "::",
     port: 8080,
