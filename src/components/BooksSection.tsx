@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import BookCard from "./BookCard";
 import grouchosMottosCover from "@/assets/grouchos-mottos-cover.jpg";
-import cryptoGameCover from "@/assets/crypto-game-cover.jpg";
+import cryptoGameCover from "@/assets/crypto-game-cover-v2.jpg";
+import mostPeopleCover from "@/assets/most-people-cover.jpg";
 import superheroesVol1Cover from "@/assets/superheroes-vol1-cover.jpg";
 import superheroesVol2Cover from "@/assets/superheroes-vol2-cover.jpg";
 import hipHopDinosaursCover from "@/assets/hip-hop-dinosaurs-cover.jpg";
@@ -24,6 +25,12 @@ const books = [
     subtitle: "Coloring & Activity Book",
     image: hipHopDinosaursCover,
     amazonUrl: "https://www.amazon.com/dp/B0DGCXRR95",
+  },
+  {
+    title: "Most People",
+    subtitle: "A Fun Little Book About What Not to Do",
+    image: mostPeopleCover,
+    comingSoon: true,
   },
   {
     title: "Groucho's Mottos",

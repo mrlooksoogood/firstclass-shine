@@ -1,0 +1,1937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>From Hella to Hyphy | The Bay Area Slang Dictionary</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Poppins & EB Garamond from CDN (upload zips to self-host) -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<!-- Font Awesome 7 self-hosted -->
+<link rel="stylesheet" href="fonts/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="all">
+<style>
+/* Self-hosted Montserrat (variable font) */
+@font-face {
+  font-family: 'Montserrat';
+  src: url('fonts/Montserrat-Variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Self-hosted Inter (variable font) */
+@font-face {
+  font-family: 'Inter';
+  src: url('fonts/Inter-Variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+/* ============================================================
+   CSS VARIABLES
+   ============================================================ */
+:root {
+  --bay-navy: #020718;
+  --bay-navy-mid: #0a1628;
+  --bay-blue: #0c3599;
+  --bay-blue-light: #1a4cc0;
+  --bay-gold: #f1c40f;
+  --bay-gold-dark: #d4a90a;
+  --bay-gold-glow: rgba(241, 196, 15, 0.15);
+  --light-bg: #f9f7f4;
+  --light-bg-alt: #f3f0eb;
+  --light-card: #ffffff;
+  --light-warm: #fdfcfa;
+  --text-on-dark: #f8fafc;
+  --text-muted-dark: #94a3b8;
+  --text-on-light: #192024;
+  --text-muted-light: #555e68;
+  --border-dark: rgba(241, 196, 15, 0.15);
+  --border-light: #dde2ec;
+  --nav-height: 80px;
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--text-on-light);
+  background: var(--light-bg);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+.nav {
+  position: sticky;
+  top: 0;
+  height: var(--nav-height);
+  background: var(--bay-navy);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.nav-logo-text {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--text-on-dark);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.nav-center {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.nav-link {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: var(--text-on-dark);
+  cursor: pointer;
+  transition: color 0.3s ease;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.nav-link:hover, .nav-link.active { color: var(--bay-gold); }
+
+.nav-cta {
+  background: transparent;
+  color: var(--bay-gold);
+  padding: 0.75rem 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 1px solid var(--bay-gold);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-cta:hover {
+  background: var(--bay-gold);
+  color: var(--bay-navy);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px;
+  background: none;
+  border: none;
+}
+.hamburger span {
+  width: 24px;
+  height: 2px;
+  background: var(--text-on-dark);
+  transition: 0.3s ease;
+  display: block;
+}
+
+/* ============================================================
+   PAGE SYSTEM
+   ============================================================ */
+.page { display: none; }
+.page.active { display: block; }
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn-primary {
+  display: inline-block;
+  background: var(--bay-gold);
+  color: var(--bay-navy);
+  padding: 1rem 2rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn-primary:hover {
+  background: var(--bay-gold-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(241, 196, 15, 0.25);
+}
+
+.btn-outline {
+  display: inline-block;
+  background: transparent;
+  color: var(--bay-gold);
+  padding: 0.75rem 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 1px solid var(--bay-gold);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn-outline:hover {
+  background: var(--bay-gold);
+  color: var(--bay-navy);
+}
+
+.btn-dark {
+  display: inline-block;
+  background: var(--bay-navy);
+  color: var(--bay-gold);
+  padding: 1rem 2rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid var(--bay-gold);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn-dark:hover {
+  background: var(--bay-navy-mid);
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   HOME — HERO
+   2-column: Left = brand title + image / Right = vertical social links
+   Mirrors livingbythemantras.com hero exactly
+   ============================================================ */
+.hero {
+  background: var(--light-warm);
+  padding: 80px 48px 96px;
+}
+
+.hero-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* Left column — Brand title + hero image */
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-brand {
+  text-align: left;
+  margin-bottom: 36px;
+}
+
+.hero-brand-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 4px;
+}
+
+.hero-brand-rule {
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: var(--bay-blue);
+}
+
+.hero-brand-from {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--text-muted-light);
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+
+.hero-brand-main {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 12px;
+}
+
+.hero-brand-hella {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 64px;
+  color: var(--bay-gold);
+  letter-spacing: 3px;
+  line-height: 1;
+}
+
+.hero-brand-to {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 36px;
+  color: var(--text-muted-light);
+  line-height: 1;
+}
+
+.hero-brand-hyphy {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 64px;
+  color: var(--bay-blue-light);
+  letter-spacing: 3px;
+  line-height: 1;
+}
+
+.hero-brand-tagline {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 17px;
+  color: var(--text-muted-light);
+  margin-top: 14px;
+  letter-spacing: 0.5px;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 384px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Placeholder */
+.hero-image-placeholder {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: var(--light-bg-alt);
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.hero-image-placeholder i {
+  font-size: 48px;
+  color: rgba(12, 53, 153, 0.15);
+}
+
+.hero-image-placeholder span {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  color: var(--text-muted-light);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Right column — Social links (matched to reference globals.css)
+   .social-link: bg #2a2b30, padding 1rem 1.5rem, gap 1rem, radius 4px
+   hover: bg #3a3b40, translateX(4px)
+   Container: flex-col gap-3 max-w-md mt-8 */
+.hero-socials {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 448px;
+  margin-top: 32px;
+}
+
+.hero-social-link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: #2a2b30;
+  padding: 1rem 1.5rem;
+  border-radius: 4px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.hero-social-link:hover {
+  background-color: #3a3b40;
+  transform: translateX(4px);
+}
+
+.hero-social-link .icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+  color: white;
+}
+
+.hero-social-link .label {
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+}
+
+.hero-social-link .arrow {
+  margin-left: auto;
+  opacity: 0.5;
+  font-size: 16px;
+  transition: opacity 0.3s ease;
+  color: white;
+}
+
+.hero-social-link:hover .arrow {
+  opacity: 1;
+}
+
+/* ============================================================
+   HOME — BOOK SHOWCASE (Light section)
+   ============================================================ */
+.home-book {
+  padding: 96px 48px;
+  background: var(--light-bg);
+}
+
+.home-book-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.book-image-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.book-image-wrap img {
+  max-width: 350px;
+  width: 100%;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* CSS fallback book */
+.book-3d {
+  width: 300px;
+  height: 440px;
+  background: linear-gradient(150deg, var(--bay-blue) 0%, var(--bay-blue-light) 40%, var(--bay-blue) 100%);
+  border-radius: 4px 8px 8px 4px;
+  position: relative;
+  transform: perspective(900px) rotateY(-8deg);
+  box-shadow: -8px 8px 20px rgba(0,0,0,0.3), -2px 0 6px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 30px;
+  transition: transform 0.4s;
+}
+
+.book-3d:hover { transform: perspective(900px) rotateY(-3deg); }
+
+.book-3d::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 20px;
+  background: linear-gradient(90deg, rgba(0,0,0,0.35), transparent);
+  border-radius: 4px 0 0 4px;
+}
+
+.book-3d-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 26px;
+  color: var(--bay-gold);
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.15;
+  margin-bottom: 8px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.book-3d-sub {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: rgba(255,255,255,0.85);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.book-3d-divider {
+  width: 50px;
+  height: 2px;
+  background: var(--bay-gold);
+  margin-bottom: 20px;
+  opacity: 0.7;
+}
+
+.book-3d-author {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+}
+
+.home-book-text h4 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--bay-blue);
+  text-transform: uppercase;
+  letter-spacing: 3.2px;
+  margin-bottom: 16px;
+}
+
+.home-book-text h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  color: var(--text-on-light);
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+
+.home-book-text > p {
+  font-family: 'Inter', sans-serif;
+  font-size: 17px;
+  color: var(--text-muted-light);
+  line-height: 1.75;
+  margin-bottom: 24px;
+}
+
+.home-book-text > p em { color: var(--text-on-light); }
+
+.book-highlights-label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text-on-light);
+  margin-bottom: 16px;
+}
+
+.book-highlights {
+  list-style: disc;
+  list-style-position: inside;
+  margin-bottom: 32px;
+}
+
+.book-highlights li {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: var(--text-muted-light);
+  padding: 4px 0;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   HOME — VIDEO SECTION (Dark)
+   ============================================================ */
+.video-section {
+  background: var(--light-bg-alt);
+  padding: 80px 48px 100px;
+}
+
+.video-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.video-embed {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.video-embed iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Placeholder when no video */
+.video-placeholder {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: var(--light-bg-alt);
+}
+
+.video-placeholder i {
+  font-size: 48px;
+  color: rgba(12, 53, 153, 0.15);
+}
+
+.video-placeholder span {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  color: var(--text-muted-light);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Retailers row under video */
+.retailers-row {
+  margin-top: 48px;
+  text-align: center;
+}
+
+.retailers-row h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--text-on-light);
+  margin-bottom: 32px;
+}
+
+.retailer-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.retailer-logos a {
+  color: var(--text-on-light);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.retailer-logos a:hover { opacity: 1; }
+
+.retailer-logos .retailer-styled {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.retailer-logos .retailer-styled i { font-size: 22px; }
+
+/* ============================================================
+   HOME — QUOTE BANNER
+   ============================================================ */
+.quote-section {
+  background: var(--light-warm);
+  padding: 80px 48px;
+  text-align: center;
+  border-top: 1px solid var(--border-light);
+}
+
+.quote-section-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.quote-text {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 28px;
+  color: var(--text-on-light);
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.quote-divider {
+  width: 60px;
+  height: 2px;
+  background: var(--bay-gold);
+  margin: 0 auto 20px;
+}
+
+.quote-attr {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--bay-blue);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+/* ============================================================
+   BOOK PAGE — HERO
+   ============================================================ */
+.book-hero {
+  background: var(--light-warm);
+  padding: 72px 48px 100px;
+}
+
+.book-hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.book-hero-text h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--bay-blue);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.book-hero-text h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  color: var(--text-on-light);
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+
+.book-hero-text > p {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: var(--text-muted-light);
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+
+.book-hero-list {
+  list-style: disc;
+  list-style-position: inside;
+  margin-bottom: 36px;
+}
+
+.book-hero-list li {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: var(--text-on-light);
+  padding: 5px 0;
+}
+
+/* Email Opt-in */
+.email-optin {
+  background: var(--bay-gold);
+  padding: 72px 48px;
+  text-align: center;
+}
+
+.email-optin-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.email-optin h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--bay-navy);
+  margin-bottom: 12px;
+}
+
+.email-optin p {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: var(--bay-navy-mid);
+  margin-bottom: 28px;
+  opacity: 0.85;
+}
+
+.email-form {
+  display: flex;
+  gap: 12px;
+  max-width: 480px;
+  margin: 0 auto 16px;
+}
+
+.email-form input {
+  flex: 1;
+  padding: 14px 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  border: 2px solid var(--bay-navy);
+  border-radius: 2px;
+  background: white;
+  color: var(--text-on-light);
+}
+
+.email-form input::placeholder { color: #999; }
+
+.email-form button {
+  padding: 1rem 2rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--bay-navy);
+  color: var(--bay-gold);
+  border: 2px solid var(--bay-navy);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.email-form button:hover { background: var(--bay-navy-mid); }
+
+.email-privacy {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: var(--bay-navy);
+  opacity: 0.6;
+}
+
+/* Features Grid */
+.features {
+  padding: 100px 48px;
+  background: var(--light-bg);
+}
+
+.features-inner { max-width: 1200px; margin: 0 auto; }
+
+.features-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.features-header h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--bay-blue);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.features-header h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--text-on-light);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.feature-card {
+  background: var(--light-card);
+  padding: 40px 32px;
+  border-radius: 6px;
+  border: 1px solid var(--border-light);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+
+.feature-icon {
+  width: 52px;
+  height: 52px;
+  background: rgba(12, 53, 153, 0.08);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.feature-icon i { font-size: 22px; color: var(--bay-blue); }
+
+.feature-card h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--text-on-light);
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  font-family: 'Inter', sans-serif;
+  font-size: 14.5px;
+  color: var(--text-muted-light);
+  line-height: 1.7;
+}
+
+/* Testimonials */
+.testimonials {
+  background: var(--light-bg-alt);
+  padding: 100px 48px;
+}
+
+.testimonials-inner { max-width: 1200px; margin: 0 auto; }
+
+.testimonials-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.testimonials-header h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--bay-blue);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.testimonials-header h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--text-on-light);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.testimonial-card {
+  background: var(--light-card);
+  border: 1px solid var(--border-light);
+  border-left: 3px solid var(--bay-gold);
+  border-radius: 4px;
+  padding: 36px 28px;
+  transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  transform: translateY(-3px);
+}
+
+.testimonial-stars {
+  color: var(--bay-gold);
+  font-size: 14px;
+  margin-bottom: 16px;
+  letter-spacing: 2px;
+}
+
+.testimonial-text {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 17px;
+  color: var(--text-on-light);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.testimonial-author {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--text-muted-light);
+}
+
+/* ============================================================
+   ABOUT PAGE
+   ============================================================ */
+.about-hero {
+  background: var(--light-warm);
+  padding: 72px 48px 100px;
+}
+
+.about-hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 72px;
+  align-items: start;
+}
+
+.author-photo-wrap { position: sticky; top: 120px; }
+
+.author-photo {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: var(--light-bg-alt);
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.author-photo img { width: 100%; height: 100%; object-fit: cover; }
+.author-photo i { font-size: 48px; color: rgba(12, 53, 153, 0.15); }
+.author-photo span {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  color: var(--text-muted-light);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.author-socials { display: flex; gap: 12px; justify-content: center; }
+
+.author-socials a {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border-light);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-muted-light);
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.author-socials a:hover {
+  color: var(--bay-blue);
+  border-color: var(--bay-blue);
+  background: rgba(12, 53, 153, 0.06);
+}
+
+.about-text h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--bay-blue);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.about-text h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  color: var(--text-on-light);
+  line-height: 1.25;
+  margin-bottom: 28px;
+}
+
+.about-text p {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: var(--text-muted-light);
+  line-height: 1.85;
+  margin-bottom: 20px;
+}
+
+/* About body */
+.about-body { padding: 100px 48px; background: var(--light-bg); }
+.about-body-inner { max-width: 760px; margin: 0 auto; }
+
+.about-body h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  color: var(--text-on-light);
+  margin-bottom: 24px;
+}
+
+.about-body p {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: var(--text-muted-light);
+  line-height: 1.85;
+  margin-bottom: 20px;
+}
+
+.about-body .gold-rule { width: 60px; height: 2px; background: var(--bay-gold); margin: 40px 0; }
+
+.about-body h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  color: var(--text-on-light);
+  margin-bottom: 16px;
+}
+
+/* Press Kit */
+.press-kit { padding: 80px 48px; background: var(--light-bg-alt); }
+.press-kit-inner { max-width: 1200px; margin: 0 auto; }
+
+.press-kit-header { text-align: center; margin-bottom: 48px; }
+
+.press-kit-header h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--bay-blue);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.press-kit-header h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  color: var(--text-on-light);
+}
+
+.press-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+
+.press-card {
+  background: var(--light-card);
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  padding: 32px 24px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.press-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+.press-card i { font-size: 28px; color: var(--bay-blue); margin-bottom: 16px; }
+
+.press-card h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text-on-light);
+  margin-bottom: 8px;
+}
+
+.press-card p {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: var(--text-muted-light);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.press-card a { font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 13px; color: var(--bay-blue); }
+.press-card a:hover { color: var(--bay-gold-dark); }
+
+/* ============================================================
+   SPEAKING PAGE
+   ============================================================ */
+.speaking-hero { background: var(--light-warm); padding: 72px 48px 100px; }
+
+.speaking-hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: start;
+}
+
+.speaking-visual {
+  aspect-ratio: 4/5;
+  background: var(--light-bg-alt);
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px;
+  overflow: hidden;
+}
+
+.speaking-visual img { width: 100%; height: 100%; object-fit: cover; }
+.speaking-visual i { font-size: 64px; color: rgba(12, 53, 153, 0.15); }
+.speaking-visual span { font-family: 'Poppins', sans-serif; font-size: 11px; color: var(--text-muted-light); text-transform: uppercase; letter-spacing: 1.5px; }
+
+.speaking-form-wrap h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600; font-size: 13px;
+  color: var(--bay-blue);
+  text-transform: uppercase; letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.speaking-form-wrap h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; font-size: 32px;
+  color: var(--text-on-light);
+  line-height: 1.25; margin-bottom: 16px;
+}
+
+.speaking-form-wrap > p {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: var(--text-muted-light);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.contact-form { display: flex; flex-direction: column; gap: 16px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%; padding: 14px 18px;
+  font-family: 'Inter', sans-serif; font-size: 14px;
+  background: var(--light-card);
+  border: 1px solid var(--border-light);
+  border-radius: 2px;
+  color: var(--text-on-light);
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input::placeholder, .contact-form textarea::placeholder { color: #999; }
+.contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { outline: none; border-color: var(--bay-blue); }
+.contact-form select { cursor: pointer; }
+.contact-form select option { background: var(--light-card); }
+.contact-form textarea { min-height: 120px; resize: vertical; }
+
+.contact-form button {
+  align-self: flex-start;
+  padding: 1rem 2rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600; font-size: 0.875rem;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  background: var(--bay-gold); color: var(--bay-navy);
+  border: none; border-radius: 2px;
+  cursor: pointer; transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: var(--bay-gold-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(241, 196, 15, 0.25);
+}
+
+/* Media Appearances */
+.media { padding: 80px 48px; background: var(--light-bg); }
+.media-inner { max-width: 1200px; margin: 0 auto; }
+
+.media-header { text-align: center; margin-bottom: 48px; }
+
+.media-header h4 {
+  font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 13px;
+  color: var(--bay-blue); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px;
+}
+
+.media-header h2 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 28px; color: var(--text-on-light); }
+
+.media-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+
+.media-card {
+  background: var(--light-card); border: 1px solid var(--border-light);
+  border-radius: 6px; overflow: hidden; transition: all 0.3s ease;
+}
+
+.media-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+
+.media-card-thumb {
+  width: 100%; aspect-ratio: 16/9;
+  background: var(--light-bg-alt);
+  display: flex; align-items: center; justify-content: center;
+}
+
+.media-card-thumb i { font-size: 32px; color: var(--border-light); }
+.media-card-body { padding: 24px; }
+
+.media-card-body h3 { font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 16px; color: var(--text-on-light); margin-bottom: 8px; }
+.media-card-body p { font-family: 'Inter', sans-serif; font-size: 14px; color: var(--text-muted-light); line-height: 1.6; margin-bottom: 14px; }
+.media-card-body a { font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 13px; color: var(--bay-blue); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  background: var(--bay-navy);
+  padding: 72px 48px 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 48px;
+}
+
+.footer-brand-name {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--text-on-dark);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.footer-brand p {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: var(--text-muted-dark);
+  line-height: 1.7;
+}
+
+.footer-brand p em { color: var(--text-on-dark); }
+
+.footer-col h4 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600; font-size: 14px;
+  color: var(--text-on-dark);
+  margin-bottom: 20px;
+}
+
+.footer-col a {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: var(--text-muted-dark);
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+.footer-col a:hover { color: var(--bay-gold); }
+
+/* Footer social icons — colored circles per platform */
+.footer-connect-icons { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px; }
+
+.footer-connect-icons a {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: white;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.footer-connect-icons a:hover { transform: scale(1.1); }
+
+.footer-connect-icons .fc-tiktok { background: #e1306c; }
+.footer-connect-icons .fc-instagram { background: linear-gradient(135deg, #833ab4, #e1306c, #f77737); }
+.footer-connect-icons .fc-youtube { background: #dc2626; }
+.footer-connect-icons .fc-x { background: #333; }
+.footer-connect-icons .fc-facebook { background: #1877f2; }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 20px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: var(--text-muted-dark);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 32px; }
+  .hero-left { max-width: 480px; margin: 0 auto; }
+  .hero-socials { max-width: 480px; margin: 0 auto; }
+
+  .home-book-inner, .book-hero-inner, .about-hero-inner, .speaking-hero-inner {
+    grid-template-columns: 1fr; gap: 40px;
+  }
+
+  .book-image-wrap { order: -1; }
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
+  .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+  .press-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .nav { padding: 0 24px; }
+  .nav-center, .nav-cta { display: none; }
+  .hamburger { display: flex; }
+
+  .nav-center.open {
+    display: flex; flex-direction: column;
+    position: absolute;
+    top: var(--nav-height); left: 0; right: 0;
+    background: var(--bay-navy);
+    padding: 24px; gap: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .nav-cta.open { display: inline-block; margin-top: 8px; }
+
+  .hero { padding: 40px 24px 56px; }
+  .hero-brand-hella, .hero-brand-hyphy { font-size: 40px; letter-spacing: 2px; }
+  .hero-brand-to { font-size: 24px; }
+  .hero-brand-from { font-size: 14px; letter-spacing: 4px; }
+  .hero-brand-rule { width: 32px; }
+  .hero-left { align-items: center; }
+  .hero-brand { text-align: center; }
+  .hero-social-link .label { font-size: 0.875rem; }
+
+  .home-book, .features, .testimonials, .about-hero, .about-body,
+  .press-kit, .book-hero, .email-optin, .speaking-hero, .media,
+  .quote-section, .video-section { padding-left: 24px; padding-right: 24px; }
+
+  .features-grid, .testimonials-grid, .media-grid { grid-template-columns: 1fr; }
+  .press-grid { grid-template-columns: repeat(2, 1fr); }
+  .form-row { grid-template-columns: 1fr; }
+  .email-form { flex-direction: column; }
+
+  .book-3d { width: 240px; height: 340px; transform: none; }
+
+  .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { text-align: center; }
+
+  .home-book-text h2, .about-text h1, .book-hero-text h1, .speaking-form-wrap h1 { font-size: 30px; }
+  .quote-text { font-size: 22px; }
+  .retailer-logos { gap: 24px; }
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-inner { animation: fadeUp 0.6s ease-out; }
+
+/* Custom scrollbar (exact match to reference globals.css) */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--light-bg); }
+::-webkit-scrollbar-thumb { background: #c5c5c5; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #aaa; }
+</style>
+</head>
+<body>
+
+<!-- ============ NAVIGATION ============ -->
+<nav class="nav">
+  <div class="nav-logo" onclick="showPage('home')">
+    <div class="nav-logo-text">From Hella to Hyphy</div>
+  </div>
+
+  <div class="nav-center" id="navMenu">
+    <span class="nav-link active" onclick="showPage('home')">Home</span>
+    <span class="nav-link" onclick="showPage('about')">About</span>
+    <span class="nav-link" onclick="showPage('book')">Book</span>
+    <a class="nav-link" href="https://clothtalk.net" target="_blank">Store</a>
+  </div>
+
+  <button class="nav-cta" id="navCta" onclick="showPage('speaking')">Speaking</button>
+
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+
+<!-- ============ HOME PAGE ============ -->
+<div class="page active" id="page-home">
+
+  <!-- Hero — Brand title + image left / Social links right -->
+  <section class="hero">
+    <div class="hero-inner">
+
+      <!-- Left: Brand + Image -->
+      <div class="hero-left">
+        <div class="hero-brand">
+          <div class="hero-brand-top">
+            <span class="hero-brand-rule"></span>
+            <span class="hero-brand-from">FROM</span>
+            <span class="hero-brand-rule"></span>
+          </div>
+          <div class="hero-brand-main">
+            <span class="hero-brand-hella">HELLA</span>
+            <span class="hero-brand-to">to</span>
+            <span class="hero-brand-hyphy">HYPHY</span>
+          </div>
+          <p class="hero-brand-tagline">The Bay Area Slang Dictionary</p>
+        </div>
+        <div class="hero-image">
+          <img src="book-3d-mockup.png" alt="From Hella to Hyphy">
+        </div>
+      </div>
+
+      <!-- Right: Social Links (matches reference clone) -->
+      <div class="hero-socials">
+        <a class="hero-social-link" href="#" target="_blank">
+          <span class="icon"><i class="fas fa-fire"></i></span>
+          <span class="label">Join the Movement</span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="hero-social-link" href="#" target="_blank">
+          <span class="icon"><i class="fab fa-tiktok"></i></span>
+          <span class="label">Follow on TikTok</span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="hero-social-link" href="#" target="_blank">
+          <span class="icon"><i class="fab fa-instagram"></i></span>
+          <span class="label">Follow on Instagram</span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="hero-social-link" href="#" target="_blank">
+          <span class="icon"><i class="fab fa-youtube"></i></span>
+          <span class="label">Subscribe on YouTube</span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="hero-social-link" href="#" target="_blank">
+          <span class="icon"><i class="fab fa-x-twitter"></i></span>
+          <span class="label">Follow on X</span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="hero-social-link" href="#" target="_blank">
+          <span class="icon"><i class="fab fa-facebook-f"></i></span>
+          <span class="label">Follow on Facebook</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Book Showcase (Light section) -->
+  <section class="home-book">
+    <div class="home-book-inner">
+      <div class="book-image-wrap">
+        <img src="book-table.png" alt="From Hella to Hyphy — the book">
+      </div>
+      <div class="home-book-text">
+        <h4>The Definitive Reference</h4>
+        <h2>The Bay's Language, Finally on Paper</h2>
+        <p>What if a single word could unlock an entire culture? <em>From Hella to Hyphy</em> captures over 800 terms that define Northern California's unique voice — from the streets of Oakland to the hills of San Francisco, from Vallejo to San Jose.</p>
+        <p>Whether you're from the Bay and want to see your language celebrated, or you're discovering the culture for the first time, this dictionary is the most complete resource ever compiled.</p>
+        <p class="book-highlights-label">In this book, you'll discover:</p>
+        <ul class="book-highlights">
+          <li>803 authentic Bay Area slang terms and definitions</li>
+          <li>Cultural context and usage examples for every entry</li>
+          <li>Hip-hop, street culture, and everyday Bay Area life covered</li>
+          <li>334 pages of thoroughly researched content</li>
+          <li>The ultimate gift for anyone who loves the Bay</li>
+        </ul>
+        <a class="btn-primary" href="https://www.amazon.com/dp/B0GJ3H81GV" target="_blank">Order The Book</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Section -->
+  <section class="video-section">
+    <div class="video-inner">
+      <div class="video-embed">
+        <video controls playsinline preload="metadata" poster="book-table.png"
+               style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;border:0;">
+          <source src="trailer.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <!-- Retailers -->
+      <div class="retailers-row">
+        <h3>Available everywhere you can buy books!</h3>
+        <div class="retailer-logos">
+          <a href="https://www.amazon.com/dp/B0GJ3H81GV" target="_blank" class="retailer-styled">
+            <i class="fab fa-amazon"></i> Amazon
+          </a>
+          <a href="#" target="_blank">BARNES &amp; NOBLE</a>
+          <a href="#" target="_blank" class="retailer-styled">
+            <i class="fab fa-apple"></i> Apple Books
+          </a>
+          <a href="https://clothtalk.net" target="_blank">OFFICIAL STORE</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Banner -->
+  <section class="quote-section">
+    <div class="quote-section-inner">
+      <div class="quote-text">"The Bay Area doesn't just have slang — it has a whole language. And it deserves to be documented, respected, and celebrated."</div>
+      <div class="quote-divider"></div>
+      <div class="quote-attr">From Hella to Hyphy</div>
+    </div>
+  </section>
+
+</div>
+
+
+<!-- ============ BOOK PAGE ============ -->
+<div class="page" id="page-book">
+
+  <section class="book-hero">
+    <div class="book-hero-inner">
+      <div class="book-image-wrap">
+        <img src="book-3d-mockup.png" alt="From Hella to Hyphy book">
+      </div>
+      <div class="book-hero-text">
+        <h4>From Hella to Hyphy</h4>
+        <h1>The Bay Area Slang Dictionary</h1>
+        <p>This dictionary is the most comprehensive collection of Bay Area slang ever assembled — 803 terms with full definitions, cultural context, and real-world usage examples.</p>
+        <ul class="book-hero-list">
+          <li>803 authentic slang terms from across the Bay Area</li>
+          <li>Cultural context and origin stories behind the language</li>
+          <li>Real-world usage examples for every entry</li>
+          <li>Hip-hop, street culture, and everyday Bay vernacular</li>
+          <li>334 pages — the definitive reference</li>
+        </ul>
+        <a class="btn-primary" href="https://www.amazon.com/dp/B0GJ3H81GV" target="_blank">Order Now on Amazon</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="email-optin">
+    <div class="email-optin-inner">
+      <h2>Want a Free Preview?</h2>
+      <p>Enter your email and we'll send you a sample of the dictionary — straight to your inbox.</p>
+      <form class="email-form" onsubmit="handleEmail(event)">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Send It</button>
+      </form>
+      <p class="email-privacy">No spam. Unsubscribe anytime. We respect your privacy.</p>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="features-inner">
+      <div class="features-header">
+        <h4>What's Inside</h4>
+        <h2>More Than Just Definitions</h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-microphone-alt"></i></div>
+          <h3>Authentic Language</h3>
+          <p>Every term verified through real Bay Area usage — not internet approximations. This is the language as it's actually spoken.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-landmark"></i></div>
+          <h3>Cultural Context</h3>
+          <p>Each entry includes the cultural backdrop that gives the term its meaning — from neighborhoods to movements.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-headphones-alt"></i></div>
+          <h3>Hip-Hop Heritage</h3>
+          <p>The Bay's music scene shaped its language. Discover the connections between hyphy, hip-hop, and everyday speech.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-layer-group"></i></div>
+          <h3>Comprehensive Scope</h3>
+          <p>803 terms spanning decades of Bay Area culture — from classic slang to modern expressions. Nothing this complete exists.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-gift"></i></div>
+          <h3>The Perfect Gift</h3>
+          <p>Whether they're from the Bay or just love the culture, this book is the gift that keeps giving.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-book"></i></div>
+          <h3>Built to Last</h3>
+          <p>334 pages of carefully researched, beautifully formatted content designed to be referenced for years to come.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="testimonials-inner">
+      <div class="testimonials-header">
+        <h4>What Readers Say</h4>
+        <h2>Real Reviews, Real Love</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-text">"If you're from the Bay, this book is mandatory. I saw words I haven't heard since I was a kid in East Oakland. Real ones know."</div>
+          <div class="testimonial-author">— Bay Area Reader</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-text">"I got this for my nephew who moved to Texas. He said it made him feel like he was back home. That's what this book does."</div>
+          <div class="testimonial-author">— Verified Purchase</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-text">"803 terms is no joke. This isn't some quick list — it's a full cultural archive. The definitions and context are on point."</div>
+          <div class="testimonial-author">— Amazon Review</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+
+<!-- ============ ABOUT PAGE ============ -->
+<div class="page" id="page-about">
+
+  <section class="about-hero">
+    <div class="about-hero-inner">
+      <div class="author-photo-wrap">
+        <div class="author-photo">
+          <img src="author-photo.png" alt="Eryc Fields" style="width:100%;height:100%;object-fit:cover;" />
+        </div>
+        <div class="author-socials">
+          <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="about-text">
+        <h4>About the Author</h4>
+        <h1>The Story Behind the Dictionary</h1>
+        <p>The Bay Area has always had its own way of talking. From the hyphy movement to the streets of East Oakland, from the hills of San Francisco to the neighborhoods of Vallejo — the language of Northern California is as rich and layered as its culture.</p>
+        <p><em>From Hella to Hyphy</em> was born from a simple realization: nobody had done this right. No one had sat down and actually compiled the Bay's language in a way that was thorough, respectful, and real. This book is that effort — 803 terms, each one defined, contextualized, and celebrated.</p>
+        <p>Published by Firstclass Media, this dictionary is more than a reference. It's a love letter to the Bay Area and the people who made the language what it is.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-body">
+    <div class="about-body-inner">
+      <h2>Why This Book Matters</h2>
+      <p>Language is culture. When you lose the words, you lose the stories they carry. The Bay Area's slang isn't just casual speech — it's a record of movements, neighborhoods, music, and generations of people who created something unique.</p>
+      <p>This dictionary ensures that record isn't lost. It's a resource for writers, musicians, educators, and anyone who wants to understand what makes the Bay the Bay.</p>
+      <div class="gold-rule"></div>
+      <h3>A Firstclass Media Publication</h3>
+      <p>Firstclass Media is an independent publisher based in Oakland, California, dedicated to amplifying Bay Area voices and preserving cultural narratives through quality publications.</p>
+      <div style="margin-top: 36px;">
+        <a class="btn-dark" onclick="showPage('speaking')" style="cursor:pointer;">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="press-kit">
+    <div class="press-kit-inner">
+      <div class="press-kit-header">
+        <h4>For Media & Events</h4>
+        <h2>Press Kit</h2>
+      </div>
+      <div class="press-grid">
+        <div class="press-card">
+          <i class="fas fa-camera"></i>
+          <h3>Approved Photos</h3>
+          <p>High-resolution author and book photos for press use.</p>
+          <a href="#">Download →</a>
+        </div>
+        <div class="press-card">
+          <i class="fas fa-file-alt"></i>
+          <h3>Sell Sheet</h3>
+          <p>One-page summary with book details and ordering info.</p>
+          <a href="#">Download →</a>
+        </div>
+        <div class="press-card">
+          <i class="fas fa-newspaper"></i>
+          <h3>Media Kit</h3>
+          <p>Full media kit with bio, talking points, and brand assets.</p>
+          <a href="#">Download →</a>
+        </div>
+        <div class="press-card">
+          <i class="fas fa-microphone"></i>
+          <h3>Speaker Sheet</h3>
+          <p>Speaking topics, past engagements, and booking details.</p>
+          <a href="#">Download →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+
+<!-- ============ SPEAKING PAGE ============ -->
+<div class="page" id="page-speaking">
+
+  <section class="speaking-hero">
+    <div class="speaking-hero-inner">
+      <div class="speaking-visual">
+        <img src="speaking-photo.png" alt="Eryc Fields speaking" style="width:100%;height:100%;object-fit:cover;" />
+      </div>
+      <div class="speaking-form-wrap">
+        <h4>Let's Connect</h4>
+        <h1>Book a Speaking Engagement</h1>
+        <p>Whether it's a cultural workshop, podcast appearance, panel discussion, or keynote — bring the story of Bay Area language to your audience.</p>
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+          </div>
+          <select required>
+            <option value="" disabled selected>I'm interested in...</option>
+            <option>Event Speaking</option>
+            <option>Guest Podcast</option>
+            <option>Panel Discussion</option>
+            <option>Cultural Workshop</option>
+            <option>Coaching</option>
+            <option>Press & Media</option>
+            <option>Bulk Book Orders</option>
+            <option>Other</option>
+          </select>
+          <textarea placeholder="Tell me about your event or project..." rows="5"></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="media">
+    <div class="media-inner">
+      <div class="media-header">
+        <h4>As Seen In</h4>
+        <h2>Media & Appearances</h2>
+      </div>
+      <div class="media-grid">
+        <div class="media-card">
+          <div class="media-card-thumb"><i class="fas fa-play-circle"></i></div>
+          <div class="media-card-body">
+            <h3>Bay Area Culture Spotlight</h3>
+            <p>A deep dive into how Bay Area slang reflects decades of cultural evolution.</p>
+            <a href="#">Coming Soon</a>
+          </div>
+        </div>
+        <div class="media-card">
+          <div class="media-card-thumb"><i class="fas fa-play-circle"></i></div>
+          <div class="media-card-body">
+            <h3>Hip-Hop Language Panel</h3>
+            <p>Exploring the intersection of music, identity, and regional language.</p>
+            <a href="#">Coming Soon</a>
+          </div>
+        </div>
+        <div class="media-card">
+          <div class="media-card-thumb"><i class="fas fa-play-circle"></i></div>
+          <div class="media-card-body">
+            <h3>From the Town to the World</h3>
+            <p>How Oakland's language went from local streets to global recognition.</p>
+            <a href="#">Coming Soon</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-brand-name">From Hella to Hyphy</div>
+      <p><em>From Hella to Hyphy</em> is more than a book — it's a way of showing up for the culture. Whether you're here to learn, celebrate, or preserve, you're in the right place. Thanks for being part of the movement.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="javascript:void(0)" onclick="showPage('home')">Home</a>
+      <a href="javascript:void(0)" onclick="showPage('about')">About</a>
+      <a href="javascript:void(0)" onclick="showPage('book')">Book</a>
+      <a href="https://clothtalk.net" target="_blank">Store</a>
+      <a href="javascript:void(0)" onclick="showPage('speaking')">Speaking</a>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <div class="footer-connect-icons">
+        <a href="#" target="_blank" class="fc-tiktok"><i class="fab fa-tiktok"></i></a>
+        <a href="#" target="_blank" class="fc-instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank" class="fc-youtube"><i class="fab fa-youtube"></i></a>
+        <a href="#" target="_blank" class="fc-x"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" target="_blank" class="fc-facebook"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Firstclass Media. All rights reserved.</p>
+  </div>
+</footer>
+
+
+<!-- ============ JAVASCRIPT ============ -->
+<script>
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+  document.querySelectorAll('.nav-link').forEach(l => {
+    if (l.textContent.trim().toLowerCase() === id) l.classList.add('active');
+  });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  closeMenu();
+}
+
+function toggleMenu() {
+  document.getElementById('navMenu').classList.toggle('open');
+  document.getElementById('navCta').classList.toggle('open');
+}
+
+function closeMenu() {
+  document.getElementById('navMenu').classList.remove('open');
+  document.getElementById('navCta').classList.remove('open');
+}
+
+function handleSubmit(e) {
+  e.preventDefault();
+  alert('Thank you for your interest! We\'ll be in touch soon.');
+  e.target.reset();
+}
+
+function handleEmail(e) {
+  e.preventDefault();
+  alert('Thank you! Check your inbox for a free preview.');
+  e.target.reset();
+}
+</script>
+
+</body>
+</html>

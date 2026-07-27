@@ -84,6 +84,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 }}
+              className="flex flex-wrap items-center gap-5 justify-center lg:justify-start"
             >
               <Button
                 variant="gold"
@@ -96,6 +97,12 @@ const Hero = () => {
                   <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
+              <a
+                href="/hella-to-hyphy/"
+                className="text-secondary-foreground/80 hover:text-primary font-semibold transition-colors underline-offset-4 hover:underline"
+              >
+                Explore the book →
+              </a>
             </motion.div>
           </motion.div>
         </div>
