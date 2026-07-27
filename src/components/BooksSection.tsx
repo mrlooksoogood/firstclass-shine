@@ -5,7 +5,8 @@ import cryptoGameCover from "@/assets/crypto-game-cover-v2.jpg";
 import mostPeopleCover from "@/assets/most-people-cover.jpg";
 import superheroesVol1Cover from "@/assets/superheroes-vol1-cover.jpg";
 import superheroesVol2Cover from "@/assets/superheroes-vol2-cover.jpg";
-import hipHopDinosaursCover from "@/assets/hip-hop-dinosaurs-cover.jpg";
+import hhdSeriesCover from "@/assets/hhd-series.jpg";
+import blackSuperheroesNeighborhood from "@/assets/black-superheroes-neighborhood.jpg";
 
 const books = [
   {
@@ -21,9 +22,15 @@ const books = [
     amazonUrl: "https://www.amazon.com/dp/B0C9SL9Q5R",
   },
   {
+    title: "Black Superheroes Coloring Book",
+    subtitle: "Neighborhood Heroes Edition",
+    image: blackSuperheroesNeighborhood,
+    comingSoon: true,
+  },
+  {
     title: "Hip-Hop Dinosaurs",
-    subtitle: "Coloring & Activity Book",
-    image: hipHopDinosaursCover,
+    subtitle: "5-Volume Coloring Series",
+    image: hhdSeriesCover,
     amazonUrl: "https://www.amazon.com/dp/B0DGCXRR95",
   },
   {
