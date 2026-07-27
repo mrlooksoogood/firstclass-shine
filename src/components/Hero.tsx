@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
-import hellaToHyphyCover from "@/assets/hella-to-hyphy-cover.jpg";
+import hellaToHyphyBook from "@/assets/hella-to-hyphy-book.png";
 
 const Hero = () => {
   return (
@@ -26,22 +26,12 @@ const Hero = () => {
               <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-3/4 h-8 bg-black/30 blur-xl rounded-full" />
               
               <motion.img
-                src={hellaToHyphyCover}
+                src={hellaToHyphyBook}
                 alt="From Hella to Hyphy - Bay Area Slang Dictionary"
-                className="w-72 md:w-80 lg:w-96 shadow-book rounded-lg relative z-10"
+                className="w-80 md:w-96 lg:w-[28rem] relative z-10 [filter:drop-shadow(0_20px_28px_rgb(0_0_0/0.28))]"
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
               />
-              
-              {/* Decorative badge */}
-              <motion.div
-                initial={{ scale: 0, rotate: -12 }}
-                animate={{ scale: 1, rotate: -12 }}
-                transition={{ duration: 0.5, delay: 0.8 }}
-                className="absolute -top-4 -right-4 bg-gradient-gold text-primary-foreground px-4 py-2 rounded-full font-bold text-sm shadow-gold"
-              >
-                Featured
-              </motion.div>
             </div>
           </motion.div>
 
