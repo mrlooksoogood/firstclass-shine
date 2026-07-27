@@ -26,10 +26,8 @@ jobs:
       - name: Install dependencies
         run: npm install --no-audit --no-fund
       - name: Build
-        env:
-          # Project page is served from /firstclass-shine/. Remove this (base
-          # falls back to "/") once a custom domain is attached at the root.
-          PAGES_BASE: /firstclass-shine/
+        # Custom domain firstclassmediagroup.com serves at the root, so base = "/"
+        # (vite.config falls back to "/" when PAGES_BASE is unset).
         run: npm run build
       - name: SPA fallback (serve app on unknown paths)
         run: cp dist/index.html dist/404.html
