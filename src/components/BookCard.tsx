@@ -6,11 +6,12 @@ interface BookCardProps {
   title: string;
   subtitle: string;
   image: string;
-  amazonUrl: string;
+  amazonUrl?: string;
+  comingSoon?: boolean;
   index: number;
 }
 
-const BookCard = ({ title, subtitle, image, amazonUrl, index }: BookCardProps) => {
+const BookCard = ({ title, subtitle, image, amazonUrl, comingSoon, index }: BookCardProps) => {
   return (
     <motion.article
       initial={{ opacity: 0, y: 50 }}
@@ -28,29 +29,34 @@ const BookCard = ({ title, subtitle, image, amazonUrl, index }: BookCardProps) =
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-          
-          {/* Hover overlay button */}
-          <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-            <Button
-              variant="gold"
-              className="w-full"
-              asChild
-            >
-              <a href={amazonUrl} target="_blank" rel="noopener noreferrer">
-                Buy Now
-                <ExternalLink className="ml-2 w-4 h-4" />
-              </a>
-            </Button>
-          </div>
+
+          {/* Coming Soon badge */}
+          {comingSoon && (
+            <div className="absolute top-4 right-4 bg-primary text-primary-foreground text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
+              Coming Soon
+            </div>
+          )}
+
+          {/* Hover overlay button (only for available titles) */}
+          {!comingSoon && amazonUrl && (
+            <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+              <Button variant="gold" className="w-full" asChild>
+                <a href={amazonUrl} target="_blank" rel="noopener noreferrer">
+                  Buy on Amazon
+                  <ExternalLink className="ml-2 w-4 h-4" />
+                </a>
+              </Button>
+            </div>
+          )}
         </div>
-        
+
         {/* Content */}
         <div className="p-6 text-center">
           <h3 className="font-display text-xl font-bold text-card-foreground mb-2 group-hover:text-primary transition-colors">
             {title}
           </h3>
           <p className="text-muted-foreground text-sm">
-            {subtitle}
+            {comingSoon ? "Coming Soon" : subtitle}
           </p>
         </div>
       </div>
