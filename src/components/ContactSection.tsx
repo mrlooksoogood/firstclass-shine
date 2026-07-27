@@ -1,8 +1,16 @@
 import { motion } from "framer-motion";
 import { Mail, Instagram, Facebook } from "lucide-react";
 
+// lucide-react has no TikTok brand icon, so provide one inline (inherits currentColor).
+const TikTok = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 1 1-2.59-2.59c.27 0 .53.04.78.12V9.79a5.7 5.7 0 0 0-.78-.05 5.69 5.69 0 1 0 5.69 5.69V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3a4.28 4.28 0 0 1-3.25-1.48z" />
+  </svg>
+);
+
 const socialLinks = [
   { icon: Instagram, label: "Instagram", href: "https://instagram.com/firstclassmediagroup" },
+  { icon: TikTok, label: "TikTok", href: "https://tiktok.com/@firstclassmediagroup" },
   { icon: Facebook, label: "Facebook", href: "https://facebook.com/firstclassmediagroup" },
 ];
 
