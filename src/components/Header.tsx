@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import fcmLogo from "@/assets/fcm-logo.png";
+import fcmMark from "@/assets/fcm-mark.png";
 
 const Header = () => {
   return (
@@ -12,9 +12,9 @@ const Header = () => {
       <div className="container mx-auto px-6 py-1 flex items-center justify-between">
         <a href="/" className="flex items-center gap-3">
           <img
-            src={fcmLogo}
+            src={fcmMark}
             alt="FIRSTCLASS MEDIA logo"
-            className="h-20 w-auto invert"
+            className="h-16 w-auto"
           />
           <h1 className="font-display text-xl font-bold text-secondary-foreground tracking-wide">
             FIRSTCLASS <span className="text-primary">MEDIA</span>

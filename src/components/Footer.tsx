@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import fcmLogo from "@/assets/fcm-logo.png";
+import fcmMark from "@/assets/fcm-mark.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -16,9 +16,9 @@ const Footer = () => {
         >
           <div className="flex flex-col items-center mb-4">
             <img
-              src={fcmLogo}
+              src={fcmMark}
               alt="FIRSTCLASS MEDIA"
-              className="h-20 w-auto invert mb-3"
+              className="h-20 w-auto mb-3"
             />
             <span className="font-display text-lg font-bold text-secondary-foreground">
               FIRSTCLASS <span className="text-primary">MEDIA</span>
