@@ -92,7 +92,7 @@ const Hero = () => {
                 className="group"
                 asChild
               >
-                <a href="https://www.amazon.com/dp/B0GJ3H81GV" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.amazon.com/dp/B0GG54919P" target="_blank" rel="noopener noreferrer">
                   Buy on Amazon
                   <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
