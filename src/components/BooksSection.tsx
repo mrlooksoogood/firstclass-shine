@@ -12,8 +12,7 @@ const books = [
     title: "From Hecka to Hyphy",
     subtitle: "Bay Area Slang Dictionary (Family Edition)",
     image: heckaCover,
-    amazonUrl: "https://www.barnesandnoble.com/w/from-hecka-to-hyphy-firstclass-media/1149460395",
-    buyLabel: "Buy the Book",
+    amazonUrl: "https://www.amazon.com/dp/B0GMY94LZ4",
   },
   {
     title: "Black Superheroes Coloring Series",
