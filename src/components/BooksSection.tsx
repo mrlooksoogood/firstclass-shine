@@ -1,35 +1,21 @@
 import { motion } from "framer-motion";
 import BookCard from "./BookCard";
-import grouchosMottosCover from "@/assets/grouchos-mottos-cover.jpg";
+import grouchosMottosCover from "@/assets/grouchos-mottos-cover-v2.jpg";
 import cryptoGameCover from "@/assets/crypto-game-cover-v2.jpg";
 import mostPeopleCover from "@/assets/most-people-cover.jpg";
-import superheroesVol1Cover from "@/assets/superheroes-vol1-cover.jpg";
-import superheroesVol2Cover from "@/assets/superheroes-vol2-cover.jpg";
+import blackSuperheroesSeries from "@/assets/black-superheroes-series.jpg";
 import hhdSeriesCover from "@/assets/hhd-series.jpg";
-import blackSuperheroesNeighborhood from "@/assets/black-superheroes-neighborhood.jpg";
 
 const books = [
   {
-    title: "Black Superheroes Coloring Book",
-    subtitle: "Vol. 1",
-    image: superheroesVol1Cover,
+    title: "Black Superheroes Coloring Series",
+    subtitle: "Multi-Volume Coloring Series",
+    image: blackSuperheroesSeries,
     amazonUrl: "https://www.amazon.com/dp/B0C9G7RP4K",
   },
   {
-    title: "Black Superheroes Coloring Book",
-    subtitle: "Vol. 2",
-    image: superheroesVol2Cover,
-    amazonUrl: "https://www.amazon.com/dp/B0C9SL9Q5R",
-  },
-  {
-    title: "Black Superheroes Coloring Book",
-    subtitle: "Neighborhood Heroes Edition",
-    image: blackSuperheroesNeighborhood,
-    comingSoon: true,
-  },
-  {
     title: "Hip-Hop Dinosaurs",
-    subtitle: "5-Volume Coloring Series",
+    subtitle: "Multi-Volume Coloring Series",
     image: hhdSeriesCover,
     amazonUrl: "https://www.amazon.com/dp/B0DGCXRR95",
   },
