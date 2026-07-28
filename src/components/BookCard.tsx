@@ -7,11 +7,12 @@ interface BookCardProps {
   subtitle: string;
   image: string;
   amazonUrl?: string;
+  buyLabel?: string;
   comingSoon?: boolean;
   index: number;
 }
 
-const BookCard = ({ title, subtitle, image, amazonUrl, comingSoon, index }: BookCardProps) => {
+const BookCard = ({ title, subtitle, image, amazonUrl, buyLabel = "Buy on Amazon", comingSoon, index }: BookCardProps) => {
   return (
     <motion.article
       initial={{ opacity: 0, y: 50 }}
@@ -42,7 +43,7 @@ const BookCard = ({ title, subtitle, image, amazonUrl, comingSoon, index }: Book
             <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">
               <Button variant="gold" className="w-full" asChild>
                 <a href={amazonUrl} target="_blank" rel="noopener noreferrer">
-                  Buy on Amazon
+                  {buyLabel}
                   <ExternalLink className="ml-2 w-4 h-4" />
                 </a>
               </Button>

@@ -5,8 +5,16 @@ import cryptoGameCover from "@/assets/crypto-game-cover-v2.jpg";
 import mostPeopleCover from "@/assets/most-people-cover.jpg";
 import blackSuperheroesSeries from "@/assets/black-superheroes-series.jpg";
 import hhdSeriesCover from "@/assets/hhd-series.jpg";
+import heckaCover from "@/assets/hecka-to-hyphy-cover.jpg";
 
 const books = [
+  {
+    title: "From Hecka to Hyphy",
+    subtitle: "Bay Area Slang Dictionary (Family Edition)",
+    image: heckaCover,
+    amazonUrl: "https://www.barnesandnoble.com/w/from-hecka-to-hyphy-firstclass-media/1149460395",
+    buyLabel: "Buy the Book",
+  },
   {
     title: "Black Superheroes Coloring Series",
     subtitle: "Multi-Volume Coloring Series",
