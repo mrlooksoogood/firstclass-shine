@@ -18,13 +18,13 @@ const books = [
     title: "Black Superheroes Coloring Series",
     subtitle: "Multi-Volume Coloring Series",
     image: blackSuperheroesSeries,
-    amazonUrl: "https://www.amazon.com/dp/B0C9G7RP4K",
+    amazonUrl: "https://www.amazon.com/dp/B0C9J1HMJ8",
   },
   {
     title: "Hip-Hop Dinosaurs",
     subtitle: "Multi-Volume Coloring Series",
     image: hhdSeriesCover,
-    amazonUrl: "https://www.amazon.com/dp/B0DGCXRR95",
+    amazonUrl: "https://www.amazon.com/dp/B0H9NGMQP7",
   },
   {
     title: "Most People",
