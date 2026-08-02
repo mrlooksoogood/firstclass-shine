@@ -6,8 +6,15 @@ import mostPeopleCover from "@/assets/most-people-cover.jpg";
 import blackSuperheroesSeries from "@/assets/black-superheroes-series.jpg";
 import hhdSeriesCover from "@/assets/hhd-series.jpg";
 import heckaCover from "@/assets/hecka-to-hyphy-cover.jpg";
+import hellaToHyphyBook from "@/assets/hella-to-hyphy-book.png";
 
 const books = [
+  {
+    title: "From Hella to Hyphy",
+    subtitle: "Bay Area Slang Dictionary (Premium Color Edition)",
+    image: hellaToHyphyBook,
+    amazonUrl: "https://www.amazon.com/dp/B0GG54919P",
+  },
   {
     title: "From Hecka to Hyphy",
     subtitle: "Bay Area Slang Dictionary (Family Edition)",
