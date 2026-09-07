@@ -136,3 +136,36 @@
     box-shadow: var(--shadow-gold);
   }
 }
+
+/* ---- Hero copy entrance (premium, cinematic) ---------------------------------
+   Retriggered on each book switch via a remounting key. Elements rise from a soft
+   blur with a staggered cadence; the title is wiped in left-to-right (matching the
+   video's gold light-streak) behind a travelling gold edge. */
+@layer utilities {
+  @keyframes heroRise {
+    0%   { opacity: 0; transform: translate3d(0, 22px, 0); filter: blur(8px); }
+    60%  { filter: blur(0); }
+    100% { opacity: 1; transform: translate3d(0, 0, 0); filter: blur(0); }
+  }
+
+  @keyframes heroWipe {
+    0%   { clip-path: inset(0 100% 0 0); opacity: 0; }
+    12%  { opacity: 1; }
+    100% { clip-path: inset(0 0 0 0); opacity: 1; }
+  }
+
+  @keyframes heroExit {
+    0%   { opacity: 1; transform: translate3d(0, 0, 0); filter: blur(0); }
+    100% { opacity: 0; transform: translate3d(0, -14px, 0); filter: blur(6px); }
+  }
+
+  /* Durations matched to the video's book-reveal window (~0.6s from the black
+     midpoint) so the copy emerges from the black IN STEP with the book, not after it. */
+  .hero-rise  { animation: heroRise 0.6s cubic-bezier(0.16, 0.84, 0.3, 1) both; }
+  .hero-title { animation: heroWipe 0.62s cubic-bezier(0.22, 0.9, 0.32, 1) both; }
+  .hero-exit  { animation: heroExit 0.4s ease-in both; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-rise, .hero-title, .hero-exit { animation: none; }
+  }
+}

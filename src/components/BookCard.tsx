@@ -7,12 +7,13 @@ interface BookCardProps {
   subtitle: string;
   image: string;
   amazonUrl?: string;
+  youtubeUrl?: string;
   buyLabel?: string;
   comingSoon?: boolean;
   index: number;
 }
 
-const BookCard = ({ title, subtitle, image, amazonUrl, buyLabel = "Buy on Amazon", comingSoon, index }: BookCardProps) => {
+const BookCard = ({ title, subtitle, image, amazonUrl, youtubeUrl, buyLabel = "Buy on Amazon", comingSoon, index }: BookCardProps) => {
   return (
     <motion.article
       initial={{ opacity: 0, y: 50 }}
@@ -59,6 +60,16 @@ const BookCard = ({ title, subtitle, image, amazonUrl, buyLabel = "Buy on Amazon
           <p className="text-muted-foreground text-sm">
             {comingSoon ? "Coming Soon" : subtitle}
           </p>
+          {youtubeUrl && !comingSoon && (
+            <a
+              href={youtubeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-block text-primary text-sm font-semibold underline-offset-4 hover:underline"
+            >
+              Watch the series on YouTube →
+            </a>
+          )}
         </div>
       </div>
     </motion.article>

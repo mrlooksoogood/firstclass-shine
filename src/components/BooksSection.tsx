@@ -1,25 +1,28 @@
 import { motion } from "framer-motion";
 import BookCard from "./BookCard";
-import grouchosMottosCover from "@/assets/grouchos-mottos-cover-v2.jpg";
-import cryptoGameCover from "@/assets/crypto-game-cover-v2.jpg";
-import mostPeopleCover from "@/assets/most-people-cover.jpg";
+import { YOUTUBE_URL } from "@/config/links";
+import grouchosMottosBook from "@/assets/grouchos-mottos-std.png";
+import cryptoGameBook from "@/assets/crypto-game-std.png";
+import mostPeopleBook from "@/assets/most-people-std.png";
 import blackSuperheroesSeries from "@/assets/black-superheroes-series.jpg";
 import hhdSeriesCover from "@/assets/hhd-series.jpg";
-import heckaCover from "@/assets/hecka-to-hyphy-cover.jpg";
-import hellaToHyphyBook from "@/assets/hella-to-hyphy-book.png";
+import heckaBook from "@/assets/hecka-to-hyphy-std.png";
+import hellaToHyphyBook from "@/assets/hella-to-hyphy-std.png";
+import originsOfOaklandBook from "@/assets/origins-of-oakland-book-final.png";
 
 const books = [
+  {
+    title: "Origins of Oakland",
+    subtitle: "Volume One",
+    image: originsOfOaklandBook,
+    amazonUrl: "https://www.amazon.com/dp/B0HHYYYRJZ",
+    youtubeUrl: YOUTUBE_URL,
+  },
   {
     title: "From Hella to Hyphy",
     subtitle: "Bay Area Slang Dictionary (Premium Color Edition)",
     image: hellaToHyphyBook,
     amazonUrl: "https://www.amazon.com/dp/B0GG54919P",
-  },
-  {
-    title: "From Hecka to Hyphy",
-    subtitle: "Bay Area Slang Dictionary (Family Edition)",
-    image: heckaCover,
-    amazonUrl: "https://www.amazon.com/dp/B0GMY94LZ4",
   },
   {
     title: "Black Superheroes Coloring Series",
@@ -34,21 +37,27 @@ const books = [
     amazonUrl: "https://www.amazon.com/dp/B0H9NGMQP7?binding=paperback",
   },
   {
+    title: "From Hecka to Hyphy",
+    subtitle: "Bay Area Slang Dictionary (Family Edition)",
+    image: heckaBook,
+    amazonUrl: "https://www.amazon.com/dp/B0GMY94LZ4",
+  },
+  {
     title: "Most People",
     subtitle: "A Fun Little Book About What Not to Do",
-    image: mostPeopleCover,
+    image: mostPeopleBook,
     comingSoon: true,
   },
   {
     title: "Groucho's Mottos",
     subtitle: "by Eryc Fields",
-    image: grouchosMottosCover,
+    image: grouchosMottosBook,
     comingSoon: true,
   },
   {
     title: "Crypto G.A.M.E.",
     subtitle: "Digital Wealth Revolution",
-    image: cryptoGameCover,
+    image: cryptoGameBook,
     comingSoon: true,
   },
 ];
